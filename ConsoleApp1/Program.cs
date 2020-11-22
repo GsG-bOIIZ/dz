@@ -9,6 +9,7 @@ namespace ConsoleApp1
             string rePoli;
             string poli = Console.ReadLine();
             poli = poli.Replace(" ", "").Replace(",", "").Replace(".", "").Replace("!", "").Replace("?", "").Replace(";", "").Replace(":", "").Replace("-", "");
+            poli = poli.ToLower();
 
             char[] sRev = poli.ToCharArray();
             Array.Reverse(sRev);
