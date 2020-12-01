@@ -1,4 +1,5 @@
 ﻿using System;
+﻿using System.Text.RegularExpressions;
 
 namespace ConsoleApp1
 {
@@ -8,7 +9,8 @@ namespace ConsoleApp1
         {
             string rePoli;
             string poli = Console.ReadLine();
-            poli = poli.Replace(" ", "").Replace(",", "").Replace(".", "").Replace("!", "").Replace("?", "").Replace(";", "").Replace(":", "").Replace("-", "");
+            Regex.Replace(poli, "(?i)[^А-ЯЁA-Z]", "");
+            //poli = poli.Replace(" ", "").Replace(",", "").Replace(".", "").Replace("!", "").Replace("?", "").Replace(";", "").Replace(":", "").Replace("-", "");
             poli = poli.ToLower();
 
             char[] sRev = poli.ToCharArray();
