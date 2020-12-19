@@ -9,9 +9,15 @@ namespace ConsoleApp1
         {
             string rePoli;
             string poli = Console.ReadLine();
-            Regex.Replace(poli, "(?i)[^А-ЯЁA-Z]", "");
-            //poli = poli.Replace(" ", "").Replace(",", "").Replace(".", "").Replace("!", "").Replace("?", "").Replace(";", "").Replace(":", "").Replace("-", "");
             poli = poli.ToLower();
+            foreach (var sChar in poli)
+            {
+                if (Char.IsLetter(sChar) == false)
+                {
+                    poli = poli.Replace(sChar, '~');
+                }
+            }
+            poli = poli.Replace("~", "");
 
             char[] sRev = poli.ToCharArray();
             Array.Reverse(sRev);
